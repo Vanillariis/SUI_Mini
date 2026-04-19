@@ -38,6 +38,16 @@ public class Donkey_Movement : MonoBehaviour
     public float bobSpeed = 5f;
     public float minSpeedForBobbing = 0.01f;
 
+    [Header("Audio")] 
+    public AudioClip jumpSound;
+    public AudioClip braySound;
+    public AudioClip gallopLoop;
+    
+    [Header("Audio Sources")]
+    public AudioSource jumpAudio;
+    public AudioSource brayAudio;
+    public AudioSource gallopAudio;
+
     private Rigidbody rb;
     private bool isGrounded = false;
 
@@ -127,6 +137,7 @@ public class Donkey_Movement : MonoBehaviour
     {
         UpdateDonkeyMoveSpeed();
         ApplyRideBobbing();
+        HandleGallopAudio();
     }
 
     private void Mount()
@@ -217,6 +228,7 @@ public class Donkey_Movement : MonoBehaviour
 
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isGrounded = false;
+            jumpAudio.PlayOneShot(jumpSound);
         }
     }
 
@@ -233,6 +245,8 @@ public class Donkey_Movement : MonoBehaviour
     public void ApplyWhipBoost()
     {
         currentSpeed = boostedSpeed;
+        
+        brayAudio.PlayOneShot(braySound);
     }
 
     private void UpdateDonkeyMoveSpeed()
@@ -266,6 +280,45 @@ public class Donkey_Movement : MonoBehaviour
                 seatStartLocalPos,
                 Time.deltaTime * 5f
             );
+        }
+    }
+    
+    private void HandleGallopAudio()
+    {
+        bool isMoving = donkeyMoveSpeed > minSpeedForBobbing;
+
+        if (isMoving)
+        {
+            // Start loop only once
+            if (!gallopAudio.isPlaying)
+            {
+                gallopAudio.clip = gallopLoop;
+                gallopAudio.loop = true;
+                gallopAudio.Play();
+            }
+
+            // Convert speed to 0–1 range (based on max boosted speed)
+            float speedFactor = Mathf.InverseLerp(baseSpeed, boostedSpeed, donkeyMoveSpeed);
+
+            // Pitch increases when faster (whip boost effect)
+            gallopAudio.pitch = Mathf.Lerp(1f, 1.3f, speedFactor);
+
+            // Smooth fade in
+            gallopAudio.volume = Mathf.Lerp(gallopAudio.volume, 1f, Time.deltaTime * 5f);
+        }
+        else
+        {
+            // Smooth fade out
+            gallopAudio.volume = Mathf.Lerp(gallopAudio.volume, 0f, Time.deltaTime * 5f);
+
+            // Stop when nearly silent
+            if (gallopAudio.volume <= 0.01f)
+            {
+                gallopAudio.Stop();
+            }
+
+            // Reset pitch so next start is clean
+            gallopAudio.pitch = 1f;
         }
     }
 }
