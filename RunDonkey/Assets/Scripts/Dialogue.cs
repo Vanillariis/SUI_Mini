@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class Dialogue : MonoBehaviour
 
     private int index;
 
+    public InputActionReference aButtonAction;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -18,10 +21,9 @@ public class Dialogue : MonoBehaviour
         StartDialogue();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (aButtonAction.action.WasPressedThisFrame())
         {
             if (dialogueText.text == dialogueLines[index])
             {
@@ -61,7 +63,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("SampleScene");
+            SceneManager.LoadScene("BasicScene");
         }
     }
 }
