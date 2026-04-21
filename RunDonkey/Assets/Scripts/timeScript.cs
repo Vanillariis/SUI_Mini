@@ -16,7 +16,7 @@ public class timeScript : MonoBehaviour
     private void Start()
     {
         elapsedTime = 0f;
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
     }
 
     // timer starts counting
@@ -28,7 +28,7 @@ public class timeScript : MonoBehaviour
         }
     }
 
-    // runtime found when crossing finishline
+    // When crossing Finishline
     void OnTriggerEnter(Collider col)
     {
         if (col.CompareTag("finishline"))

@@ -21,6 +21,7 @@ public class jumpManager : MonoBehaviour
         if (jump == jumps[0])
         {
             jumps.RemoveAt(0);
+            Debug.Log($"EVENT:JumpCompleted|Name:{jump.name}");
             Destroy(jump);
 
             if (jumps.Count == 0 && finishline != null)
@@ -30,6 +31,7 @@ public class jumpManager : MonoBehaviour
         }
         else
         {
+            Debug.Log($"EVENT:WrongJump|Expected:{jumps[0].name}|Got:{jump.name}");
             Debug.Log("Wrong jump order!");
         }
     }
