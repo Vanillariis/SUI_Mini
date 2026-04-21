@@ -327,6 +327,7 @@ UnityEngine.Application::get_unityVersionMaj
 UnityEngine.Application::get_unityVersionVer
 UnityEngine.Application::OpenURL_Injected
 UnityEngine.Application::Quit
+UnityEngine.Application::SetLogCallbackDefined
 UnityEngine.Application::get_persistentDataPath_Injected
 UnityEngine.Application::get_productName_Injected
 UnityEngine.Application::get_streamingAssetsPath_Injected
@@ -1159,7 +1160,6 @@ UnityEngine.PlayerPrefs::TrySetInt_Injected
 UnityEngine.PlayerPrefs::TrySetSetString_Injected
 UnityEngine.PlayerPrefs::GetInt_Injected
 UnityEngine.PlayerPrefs::GetFloat_Injected
-UnityEngine.PlayerPrefs::DeleteAll
 UnityEngine.PlayerPrefs::DeleteKey_Injected
 UnityEngine.PlayerPrefs::GetString_Injected
 UnityEngine.Profiling.Profiler::GetRuntimeMemorySizeLong_Injected
