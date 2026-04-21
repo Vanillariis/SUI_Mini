@@ -10,6 +10,7 @@ TagManager:
   - takeoff
   - hover
   - landing
+  - flowers
   layers:
   - Default
   - TransparentFX

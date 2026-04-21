@@ -35,4 +35,12 @@ public class jumpManager : MonoBehaviour
             Debug.Log("Wrong jump order!");
         }
     }
+
+        void OnTriggerEnter(Collider col)
+    {
+        if (col.CompareTag("flowers"))
+        {
+            Debug.Log("Collided with: " + col.gameObject.name);
+        }
+    }
 }
