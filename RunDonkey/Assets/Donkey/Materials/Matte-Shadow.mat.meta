@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3408392c34991a146a5a2a7c27b026af
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206670
+  packageName: Donkey
+  packageVersion: 2019.4.0f1
+  assetPath: Assets/Donkey/Materials/Matte-Shadow.mat
+  uploadId: 462368

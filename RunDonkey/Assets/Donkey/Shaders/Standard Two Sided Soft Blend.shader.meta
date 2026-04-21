@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 74cab059c7c682f40829b35e324828cf
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206670
+  packageName: Donkey
+  packageVersion: 2019.4.0f1
+  assetPath: Assets/Donkey/Shaders/Standard Two Sided Soft Blend.shader
+  uploadId: 462368

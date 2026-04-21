@@ -47,6 +47,14 @@
             "icon": null
           },
           {
+            "name": "Avatar",
+            "scenes": [
+              "Assets/Scenes/BasicScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "Motion",
             "scenes": [],
             "dependencyType": 1,
@@ -84,7 +92,9 @@
           },
           {
             "name": "AudioClip",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/BasicScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -104,13 +114,17 @@
           },
           {
             "name": "AudioResource",
-            "scenes": [],
-            "dependencyType": 1,
+            "scenes": [
+              "Assets/Scenes/BasicScene.unity"
+            ],
+            "dependencyType": 0,
             "icon": null
           },
           {
             "name": "AudioSource",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/BasicScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
