@@ -119,6 +119,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5199354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5199355}
+  m_Layer: 0
+  m_Name: CarrotStickHold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5199355
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5199354}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.07499695, y: -0.04143989, z: -0.2199}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2443640528480294985}
+  m_Father: {fileID: 441087507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &37031505
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1026,7 @@ PrefabInstance:
       addedObject: {fileID: 1572236635}
     - targetCorrespondingSourceObject: {fileID: 1670256625, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2443640528480294985}
+      addedObject: {fileID: 5199355}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1670256624, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       insertIndex: -1
@@ -3214,7 +3246,7 @@ MonoBehaviour:
   carrot: {fileID: 1199501125}
   selectAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   rightHandController: {fileID: 441087507}
-  carrotStick: {fileID: 3072122012276130547}
+  carrotStick: {fileID: 5199354}
   leftSelectAction: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   leftHandController: {fileID: 441087509}
   whip: {fileID: 696518708}
@@ -6651,12 +6683,12 @@ Transform:
   m_GameObject: {fileID: 3072122012276130547}
   serializedVersion: 2
   m_LocalRotation: {x: 0.69642615, y: -0, z: -0, w: 0.7176285}
-  m_LocalPosition: {x: 0.07499695, y: -0.04143989, z: -0.25300026}
-  m_LocalScale: {x: 0.6, y: 3.2533338, z: 1.3066669}
+  m_LocalPosition: {x: 0, y: 0, z: -0.033100262}
+  m_LocalScale: {x: 0.6, y: 3.253334, z: 1.306667}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2053950868912908665}
-  m_Father: {fileID: 441087507}
+  m_Father: {fileID: 5199355}
   m_LocalEulerAnglesHint: {x: 88.282, y: 0, z: 0}
 --- !u!1 &2609200858202276879
 GameObject:
