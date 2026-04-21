@@ -658,6 +658,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Origin (XR Rig)
       objectReference: {fileID: 0}
+    - target: {fileID: 1717954561962503725, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -700,6 +704,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1717954561962503726, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1176,7 +1184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bd073250373946ee872f3741dbb1668, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Whip
-  donkey: {fileID: 2064586917}
+  donkey: {fileID: 1050701810}
   whipSound: {fileID: 8300000, guid: 70117f9d7cd8e4c7ca320e29ca0a0213, type: 3}
   whipAudio: {fileID: 758309677}
 --- !u!54 &758309672
@@ -1567,7 +1575,7 @@ GameObject:
   m_Layer: 0
   m_Name: Seat_Position
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1579,12 +1587,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 869426315}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: 0.09773548, z: -0, w: 0.9952125}
+  m_LocalPosition: {x: 0.022, y: 1.063, z: 0.061}
   m_LocalScale: {x: 0.47, y: 0.47, z: 0.47}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2064586916}
+  m_Father: {fileID: 1050701808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &909131324
 PrefabInstance:
@@ -1672,6 +1680,202 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.499084, z: 0.31685725}
   m_Center: {x: 8.3237306e-10, y: 0.24954218, z: 0.025736818}
+--- !u!1001 &1050701807
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 428838320459736597, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 428838320459736597, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 52.835
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 16.681
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9952125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.09773548
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -11.218
+      objectReference: {fileID: 0}
+    - target: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095938237461629582, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095938237461629583, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_Name
+      value: Donkey
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      propertyPath: m_TagString
+      value: Donkey
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 869426316}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050701811}
+    - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050701810}
+    - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050701812}
+  m_SourcePrefab: {fileID: 100100000, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+--- !u!4 &1050701808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5986311925203352687, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+  m_PrefabInstance: {fileID: 1050701807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1050701809 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+  m_PrefabInstance: {fileID: 1050701807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1050701810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050701809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 036607cb1bda7400a8a49d9121f504d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Donkey_Movement
+  xrRig: {fileID: 441087508}
+  seatAnchor: {fileID: 869426316}
+  carrot: {fileID: 562422754}
+  selectAction: {fileID: 187161793506945269, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  rightHandController: {fileID: 441087507}
+  carrotStick: {fileID: 1572236634}
+  leftSelectAction: {fileID: -6131295136447488360, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  leftHandController: {fileID: 441087509}
+  whip: {fileID: 696518708}
+  baseSpeed: 2
+  currentSpeed: 2
+  speedDecayRate: 2
+  turnSpeed: 5
+  stopDistance: 0.5
+  boostPerHit: 1
+  maxBoostBonus: 4
+  boostDecayRate: 1.5
+  jumpHeightThreshold: 0.3
+  jumpForce: 5
+  bobAmount: 0.03
+  bobSpeed: 5
+  minSpeedForBobbing: 0.01
+  animator: {fileID: 1050701815}
+  walkThreshold: 0.1
+  trotThreshold: 2.5
+  runThreshold: 4.5
+  jumpSound: {fileID: 0}
+  braySound: {fileID: 0}
+  gallopLoop: {fileID: 0}
+  jumpAudio: {fileID: 0}
+  brayAudio: {fileID: 0}
+  gallopAudio: {fileID: 0}
+--- !u!54 &1050701811
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050701809}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 80
+  m_CollisionDetection: 1
+--- !u!65 &1050701812
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050701809}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5669296, y: 1.030963, z: 1.4792473}
+  m_Center: {x: -0.008137522, y: 0.52602065, z: 0.10337592}
+--- !u!95 &1050701815 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 428838320459736597, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+  m_PrefabInstance: {fileID: 1050701807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1063442553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2614,7 +2818,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &2064586913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2705,8 +2909,7 @@ Transform:
   m_LocalPosition: {x: 52.9, y: 1.156, z: 16.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
-  m_Children:
-  - {fileID: 869426316}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2064586917
@@ -2731,16 +2934,22 @@ MonoBehaviour:
   leftHandController: {fileID: 441087509}
   whip: {fileID: 696518708}
   baseSpeed: 2
-  boostedSpeed: 5
   currentSpeed: 0
   speedDecayRate: 1
   turnSpeed: 2
   stopDistance: 0.5
+  boostPerHit: 1
+  maxBoostBonus: 4
+  boostDecayRate: 1.5
   jumpHeightThreshold: 0.5
   jumpForce: 5
   bobAmount: 0.03
   bobSpeed: 5
   minSpeedForBobbing: 0.1
+  animator: {fileID: 0}
+  walkThreshold: 0.1
+  trotThreshold: 2.5
+  runThreshold: 4.5
   jumpSound: {fileID: 8300000, guid: c203a923ab73141c99c9220e8388f4ec, type: 3}
   braySound: {fileID: 8300000, guid: 8fae84d3a199344148651c9cbe61351f, type: 3}
   gallopLoop: {fileID: 8300000, guid: 335c6219eb9994d0ebdb02b336d8cc89, type: 3}
@@ -3101,7 +3310,6 @@ SceneRoots:
   - {fileID: 756192408}
   - {fileID: 2092139010}
   - {fileID: 1249617921}
-  - {fileID: 2064586916}
   - {fileID: 2131634247}
   - {fileID: 266600735}
   - {fileID: 1869225400}
@@ -3120,3 +3328,5 @@ SceneRoots:
   - {fileID: 1675525464}
   - {fileID: 620663274}
   - {fileID: 215254285}
+  - {fileID: 1050701807}
+  - {fileID: 2064586916}

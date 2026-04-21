@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 44faa19f1aac4f24a8827ebe3ca17ce5
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206670
+  packageName: Donkey
+  packageVersion: 2019.4.0f1
+  assetPath: Assets/Donkey/Materials/M_Donkey.mat
+  uploadId: 462368

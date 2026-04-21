@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0ab667d2b5ee0db40b3dcb5d40ccc85e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 206670
+  packageName: Donkey
+  packageVersion: 2019.4.0f1
+  assetPath: Assets/Donkey/Materials/M_DonkeyEyes.mat
+  uploadId: 462368
