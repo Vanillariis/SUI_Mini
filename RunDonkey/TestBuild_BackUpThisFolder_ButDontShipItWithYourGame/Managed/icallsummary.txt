@@ -335,6 +335,8 @@ UnityEngine.Application::get_version_Injected
 UnityEngine.Application::set_targetFrameRate
 UnityEngine.Application::get_platform
 UnityEngine.AssetBundle::LoadAsset_Internal_Injected
+UnityEngine.AsyncOperation::InternalDestroy
+UnityEngine.AsyncOperation::InternalSetManagedObject
 UnityEngine.Audio.ScriptableProcessorBindings::CheckProcessorExistsInternal_Injected
 UnityEngine.AudioSettings::StartAudioOutput
 UnityEngine.AudioSettings::StopAudioOutput
@@ -1152,6 +1154,14 @@ UnityEngine.PlayerConnectionInternal::PollInternal
 UnityEngine.PlayerConnectionInternal::RegisterInternal_Injected
 UnityEngine.PlayerConnectionInternal::SendMessage_Injected
 UnityEngine.PlayerConnectionInternal::UnregisterInternal_Injected
+UnityEngine.PlayerPrefs::TrySetFloat_Injected
+UnityEngine.PlayerPrefs::TrySetInt_Injected
+UnityEngine.PlayerPrefs::TrySetSetString_Injected
+UnityEngine.PlayerPrefs::GetInt_Injected
+UnityEngine.PlayerPrefs::GetFloat_Injected
+UnityEngine.PlayerPrefs::DeleteAll
+UnityEngine.PlayerPrefs::DeleteKey_Injected
+UnityEngine.PlayerPrefs::GetString_Injected
 UnityEngine.Profiling.Profiler::GetRuntimeMemorySizeLong_Injected
 UnityEngine.PropertyNameUtils::PropertyNameFromString_Injected
 UnityEngine.QualitySettings::get_billboardsFaceCameraPosition
@@ -1597,6 +1607,7 @@ UnityEngine.SceneManagement.Scene::GetRootGameObjectsInternal_Injected
 UnityEngine.SceneManagement.SceneManager::get_sceneCount
 UnityEngine.SceneManagement.SceneManager::GetActiveScene_Injected
 UnityEngine.SceneManagement.SceneManager::GetSceneAt_Injected
+UnityEngine.SceneManagement.SceneManagerAPIInternal::LoadSceneAsyncNameIndexInternal_Injected
 UnityEngine.Screen::get_fullScreen
 UnityEngine.Screen::GetMSAASamples
 UnityEngine.Screen::get_height
@@ -1887,6 +1898,7 @@ UnityEngine.Transform::get_childCount_Injected
 UnityEngine.Transform::FindRelativeTransformWithPath_Injected
 UnityEngine.Transform::GetChild_Injected
 UnityEngine.Transform::GetParent_Injected
+UnityEngine.Transform::GetRoot_Injected
 UnityEngine.Transform::GetLocalPositionAndRotation_Injected
 UnityEngine.Transform::GetPositionAndRotation_Injected
 UnityEngine.Transform::Internal_LookAt_Injected
