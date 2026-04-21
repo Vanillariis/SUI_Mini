@@ -16,7 +16,7 @@ public class timeScript : MonoBehaviour
     private void Start()
     {
         elapsedTime = 0f;
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
     }
 
     // timer starts counting
