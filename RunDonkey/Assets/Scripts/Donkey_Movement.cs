@@ -188,10 +188,7 @@ public class Donkey_Movement : MonoBehaviour
         if (xrRig == null || seatAnchor == null)
             return;
 
-        Vector3 localPos = xrRig.localPosition;
-        localPos.x = 0f;
-        localPos.z = 0f;
-        xrRig.localPosition = localPos;
+        xrRig.localPosition = Vector3.zero; // ← lock ALL axes
 
         xrRig.localRotation = Quaternion.identity;
     }

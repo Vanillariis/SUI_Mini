@@ -2755,6 +2755,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1050701816}
+    - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050701822}
+    - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050701821}
+    - targetCorrespondingSourceObject: {fileID: 6365968185880897237, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1050701820}
   m_SourcePrefab: {fileID: 100100000, guid: 003996017387cd04983db7b7c46bdd73, type: 3}
 --- !u!4 &1050701808 stripped
 Transform:
@@ -2842,6 +2851,54 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1050701820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050701809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e89f2b6dadab0449b6e17577071acd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::timeScript
+  playerName: 
+  timerText: {fileID: 699441651}
+  canvasObject: {fileID: 1564845995}
+  scoreboardText: {fileID: 1496853892}
+--- !u!114 &1050701821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050701809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c37c920f9f47747a9bc691be8fc98b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::jumpManager
+  jumps:
+  - {fileID: 1620044009233349}
+  - {fileID: 1635314159683387}
+  - {fileID: 1591218607174351}
+  - {fileID: 1163651424046366}
+  finishline: {fileID: 82742750}
+--- !u!114 &1050701822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050701809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77f7558b33429a64e81ade0212b3946b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::obstacleJumpVerification
+  finishline: {fileID: 82742750}
+  jumpManager: {fileID: 1050701821}
 --- !u!1001 &1063442553
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6283,3 +6340,4 @@ SceneRoots:
   - {fileID: 1564845999}
   - {fileID: 2443640528480294985}
   - {fileID: 1199501124}
+  - {fileID: 1550311639}
