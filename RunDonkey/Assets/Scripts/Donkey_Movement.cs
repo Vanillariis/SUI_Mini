@@ -35,8 +35,8 @@ public class Donkey_Movement : MonoBehaviour
     private float boostBonus = 0f;
 
     [Header("Jump")]
-    public float jumpHeightThreshold = 0.3f;
-    public float jumpForce = 5f;
+    public float jumpHeightThreshold = 0.25f;
+    public float jumpForce = 6f;
 
     [Header("Ride Bobbing")]
     public float bobAmount = 0.03f;
