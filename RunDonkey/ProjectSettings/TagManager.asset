@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Anchor
   - Donkey
+  - finishline
+  - takeoff
+  - hover
+  - landing
   layers:
   - Default
   - TransparentFX

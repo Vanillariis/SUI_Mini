@@ -10,6 +10,6 @@ public class SceneManagement : MonoBehaviour
 
     public void retryGame()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("BasicScene");
     }
 }
