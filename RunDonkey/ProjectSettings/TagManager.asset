@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Anchor
   - Donkey
+  - finishline
+  - takeoff
+  - hover
+  - landing
   layers:
   - Default
   - TransparentFX
@@ -42,6 +46,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 3225764905
     locked: 0
   m_RenderingLayers:
   - Default
