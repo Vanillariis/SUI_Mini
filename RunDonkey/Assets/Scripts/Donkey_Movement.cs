@@ -35,13 +35,10 @@ public class Donkey_Movement : MonoBehaviour
     private float boostBonus = 0f;
 
     [Header("Jump")]
-    public float jumpHeightThreshold = 0.25f;
+    public Transform jumpThresholdPoint;
+    public Transform resetThresholdPoint;
     public float jumpForce = 6f;
-
-    [Header("Ride Bobbing")]
-    public float bobAmount = 0.03f;
-    public float bobSpeed = 5f;
-    public float minSpeedForBobbing = 0.01f;
+    public float jumpCooldown = 0.15f;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
@@ -62,12 +59,9 @@ public class Donkey_Movement : MonoBehaviour
     private Rigidbody rb;
     private bool isGrounded;
 
-    private float carrotStartLocalY;
-    private float previousCarrotLocalY;
     private bool wasCarrotActiveLastFrame = false;
-
-    private Vector3 seatStartLocalPos;
-    private float bobTimer;
+    private bool jumpArmed = true;
+    private float lastJumpTime = -999f;
 
     private Vector3 lastDonkeyPosition;
     private float donkeyMoveSpeed;
@@ -97,7 +91,6 @@ public class Donkey_Movement : MonoBehaviour
         rb.collisionDetectionMode = CollisionDetectionMode.Continuous;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
 
-        seatStartLocalPos = seatAnchor != null ? seatAnchor.localPosition : Vector3.zero;
         currentSpeed = 0f;
         lastDonkeyPosition = transform.position;
 
@@ -137,19 +130,18 @@ public class Donkey_Movement : MonoBehaviour
         {
             boostBonus = 0f;
             currentSpeed = Mathf.Lerp(currentSpeed, 0f, Time.deltaTime * speedDecayRate);
+            jumpArmed = true; // reset jump state when carrot is not active
         }
 
         if (carrotActive && carrot != null)
         {
-            float currentCarrotLocalY = transform.InverseTransformPoint(carrot.position).y;
-
             if (!wasCarrotActiveLastFrame)
             {
-                carrotStartLocalY = currentCarrotLocalY;
-                previousCarrotLocalY = currentCarrotLocalY;
+                // Optional: re-arm when carrot first becomes active
+                jumpArmed = true;
             }
 
-            TryJump(currentCarrotLocalY);
+            TryJump();
         }
 
         wasCarrotActiveLastFrame = carrotActive;
@@ -168,7 +160,6 @@ public class Donkey_Movement : MonoBehaviour
     private void LateUpdate()
     {
         UpdateDonkeyMoveSpeed();
-        ApplyRideBobbing();
         HandleGallopAudio();
         KeepRigSeated();
     }
@@ -188,8 +179,7 @@ public class Donkey_Movement : MonoBehaviour
         if (xrRig == null || seatAnchor == null)
             return;
 
-        xrRig.localPosition = Vector3.zero; // ← lock ALL axes
-
+        xrRig.localPosition = Vector3.zero;
         xrRig.localRotation = Quaternion.identity;
     }
 
@@ -270,37 +260,57 @@ public class Donkey_Movement : MonoBehaviour
         rb.MovePosition(newPosition);
     }
 
-    private void TryJump(float currentCarrotLocalY)
+    private void TryJump()
     {
-        float currentDelta = currentCarrotLocalY - carrotStartLocalY;
-        float previousDelta = previousCarrotLocalY - carrotStartLocalY;
+        if (carrot == null || jumpThresholdPoint == null || resetThresholdPoint == null)
+            return;
 
-        bool crossedThresholdUpward =
-            previousDelta <= jumpHeightThreshold &&
-            currentDelta > jumpHeightThreshold;
+        // Compare everything in donkey local space so the setup stays consistent
+        float carrotLocalY = transform.InverseTransformPoint(carrot.position).y;
+        float jumpLocalY = transform.InverseTransformPoint(jumpThresholdPoint.position).y;
+        float resetLocalY = transform.InverseTransformPoint(resetThresholdPoint.position).y;
 
-        if (crossedThresholdUpward && isGrounded)
+        // Re-arm once carrot comes back down below the lower reset threshold
+        if (!jumpArmed && carrotLocalY < resetLocalY)
         {
-#if UNITY_6000_0_OR_NEWER
-            Vector3 v = rb.linearVelocity;
-            v.y = 0f;
-            rb.linearVelocity = v;
-#else
-            Vector3 v = rb.velocity;
-            v.y = 0f;
-            rb.velocity = v;
-#endif
-
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-            isGrounded = false;
-
-            if (jumpAudio != null && jumpSound != null)
-            {
-                jumpAudio.PlayOneShot(jumpSound);
-            }
+            jumpArmed = true;
         }
 
-        previousCarrotLocalY = currentCarrotLocalY;
+        bool canJump =
+            jumpArmed &&
+            isGrounded &&
+            Time.time >= lastJumpTime + jumpCooldown &&
+            carrotLocalY > jumpLocalY;
+
+        if (!canJump)
+            return;
+
+#if UNITY_6000_0_OR_NEWER
+        Vector3 v = rb.linearVelocity;
+        v.y = 0f;
+        rb.linearVelocity = v;
+#else
+        Vector3 v = rb.velocity;
+        v.y = 0f;
+        rb.velocity = v;
+#endif
+
+        rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+
+        isGrounded = false;
+        jumpArmed = false;
+        lastJumpTime = Time.time;
+
+        if (jumpAudio != null && jumpSound != null)
+        {
+            jumpAudio.PlayOneShot(jumpSound);
+        }
+
+        if (brayAudio != null && braySound != null)
+        {
+            brayAudio.PlayOneShot(braySound);
+        }
+        
     }
 
     private void UpdateAnimations()
@@ -313,19 +323,19 @@ public class Donkey_Movement : MonoBehaviour
         bool isMoving = moveSpeed > walkThreshold;
         bool isTrotting = moveSpeed >= trotThreshold;
         bool isRunning = moveSpeed >= runThreshold;
-        bool isJumping = !isGrounded;
 
         animator.SetBool("idle", false);
         animator.SetBool("walk", false);
         animator.SetBool("trot", false);
         animator.SetBool("run", false);
-        animator.SetBool("jump", false);
 
-        if (isJumping)
+        if (!isGrounded)
         {
-            animator.SetBool("jump", true);
+            // Leave locomotion bools off while airborne if you want cleaner jump state
+            return;
         }
-        else if (isRunning)
+
+        if (isRunning)
         {
             animator.SetBool("run", true);
         }
@@ -376,11 +386,6 @@ public class Donkey_Movement : MonoBehaviour
             return;
 
         boostBonus = Mathf.Clamp(boostBonus + boostPerHit, 0f, maxBoostBonus);
-
-        if (brayAudio != null && braySound != null)
-        {
-            brayAudio.PlayOneShot(braySound);
-        }
     }
 
     private void UpdateDonkeyMoveSpeed()
@@ -392,37 +397,12 @@ public class Donkey_Movement : MonoBehaviour
         lastDonkeyPosition = transform.position;
     }
 
-    private void ApplyRideBobbing()
-    {
-        if (seatAnchor == null)
-            return;
-
-        bool donkeyMoving = donkeyMoveSpeed > minSpeedForBobbing;
-
-        if (donkeyMoving)
-        {
-            bobTimer += Time.deltaTime * bobSpeed;
-            float bobOffsetY = Mathf.Sin(bobTimer) * bobAmount;
-
-            seatAnchor.localPosition = seatStartLocalPos + new Vector3(0f, bobOffsetY, 0f);
-        }
-        else
-        {
-            bobTimer = 0f;
-            seatAnchor.localPosition = Vector3.Lerp(
-                seatAnchor.localPosition,
-                seatStartLocalPos,
-                Time.deltaTime * 5f
-            );
-        }
-    }
-
     private void HandleGallopAudio()
     {
         if (gallopAudio == null || gallopLoop == null)
             return;
 
-        bool isMoving = donkeyMoveSpeed > minSpeedForBobbing;
+        bool isMoving = donkeyMoveSpeed > 0.01f;
 
         if (isMoving)
         {

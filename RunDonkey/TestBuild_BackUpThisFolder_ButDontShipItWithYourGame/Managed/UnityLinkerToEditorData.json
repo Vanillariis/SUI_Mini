@@ -269,7 +269,9 @@
           },
           {
             "name": "LightProbes",
-            "scenes": [],
+            "scenes": [
+              "Assets/Scenes/BasicScene.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },
@@ -1036,6 +1038,20 @@
           },
           {
             "name": "Collider",
+            "scenes": [],
+            "dependencyType": 1,
+            "icon": null
+          },
+          {
+            "name": "HingeJoint",
+            "scenes": [
+              "Assets/Scenes/BasicScene.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "Joint",
             "scenes": [],
             "dependencyType": 1,
             "icon": null
