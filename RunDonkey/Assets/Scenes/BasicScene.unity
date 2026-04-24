@@ -761,7 +761,7 @@ Transform:
   m_GameObject: {fileID: 233410146}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.03, y: -0, z: 1.939}
+  m_LocalPosition: {x: -0.03, y: -0, z: 2.14}
   m_LocalScale: {x: 3.5499992, y: 0.2, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3571,7 +3571,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e89f2b6dadab0449b6e17577071acd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::timeScript
-  playerName: 
+  playerName: Player 11
   timerText: {fileID: 699441651}
   canvasObject: {fileID: 1564845995}
   scoreboardText: {fileID: 1496853892}
